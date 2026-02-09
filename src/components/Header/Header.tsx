@@ -2,9 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MapPin, Mail, Phone, ChevronDown, Menu, Search } from "lucide-react";
 
 const Header = () => {
+    const pathname = usePathname();
+
     return (
         <header className="w-full font-sans">
             {/* Top Bar */}
@@ -23,6 +26,7 @@ const Header = () => {
                         <Link href="/contact" className="uppercase hover:opacity-80 transition-opacity">
                             Contact
                         </Link>
+
                         <Link href="/careers" className="uppercase hover:opacity-80 transition-opacity">
                             Careers
                         </Link>
@@ -101,24 +105,23 @@ const Header = () => {
             {/* Navigation Header */}
             <div className="bg-white px-5 md:px-10 py-0 flex justify-between items-center border-b border-gray-100 h-16">
                 <nav className="hidden lg:flex items-center h-full">
-                    <Link href="/" className="text-[#ff5e13] font-bold text-[14px] tracking-widest uppercase h-full px-5 border-r border-gray-50 flex items-center">
-                        Home
-                    </Link>
-                    <Link href="/pages" className="text-[#1a1a1a] font-bold text-[14px] tracking-widest uppercase h-full px-5 hover:text-[#ff5e13] transition-colors border-r border-gray-50 flex items-center">
-                        About
-                    </Link>
-                    <Link href="/shop" className="text-[#1a1a1a] font-bold text-[14px] tracking-widest uppercase h-full px-5 hover:text-[#ff5e13] transition-colors border-r border-gray-50 flex items-center">
-                        Projects
-                        {/* <ChevronDown size={14} strokeWidth={3} className="ml-1 text-gray-400" /> */}
-                    </Link>
-                    <Link href="/portfolio" className="text-[#1a1a1a] font-bold text-[14px] tracking-widest uppercase h-full px-5 hover:text-[#ff5e13] transition-colors border-r border-gray-50 flex items-center">
-                        Careers
-                        {/* <ChevronDown size={14} strokeWidth={3} className="ml-1 text-gray-400" /> */}
-                    </Link>
-                    <Link href="/blog" className="text-[#1a1a1a] font-bold text-[14px] tracking-widest uppercase h-full px-5 hover:text-[#ff5e13] transition-colors border-r border-gray-50 flex items-center">
-                        Contact
-                        {/* <ChevronDown size={14} strokeWidth={3} className="ml-1 text-gray-400" /> */}
-                    </Link>
+                    {[
+                        { name: "Home", path: "/" },
+                        { name: "About", path: "/about" },
+                        { name: "Projects", path: "/projects" },
+                        { name: "What We Do", path: "/what-we-do" },
+                        { name: "Careers", path: "#" },
+                        { name: "Contact", path: "/contact" }
+                    ].map((link) => (
+                        <Link
+                            key={link.path}
+                            href={link.path}
+                            className={`${pathname === link.path ? "text-[#ff5e13]" : "text-[#1a1a1a]"
+                                } font-bold text-[14px] tracking-widest uppercase h-full px-5 hover:text-[#ff5e13] transition-colors border-r border-gray-50 flex items-center`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
                 </nav>
 
                 <div className="hidden lg:flex items-center gap-6">
