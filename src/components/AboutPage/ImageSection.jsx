@@ -5,16 +5,16 @@ export default function ImageSection() {
                 <div className="w-[70%]">
                     <img src="https://www.henselphelps.com/wp-content/uploads/2025/05/HP-Tyndall-Onsite-Day-1-48-scaled.jpg" alt="" className="w-full h-[60vh] object-cover" />
                 </div>
-                <div className="p-6 w-[30%]">
+                <div className="p-6 w-[30%] text-white">
                     <h1 className="text-4xl p-2">
                         The Hensel Phelps Way
                     </h1>
                     <div className="w-full h-px bg-gray-300"></div>
-                    <p className="text-xl p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum blanditiis nam, quisquam assumenda fugit dolores saepe libero ipsum voluptatum veritatis corporis quis minima sapiente nemo expedita alias dolore voluptas laboriosam molestiae unde distinctio! Provident perspiciatis voluptatibus earum? Id, expedita nostrum.</p>
+                    <p className="text-xl p-4 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum blanditiis nam, quisquam assumenda fugit dolores saepe libero ipsum voluptatum veritatis corporis quis minima sapiente nemo expedita alias dolore voluptas laboriosam molestiae unde distinctio! Provident perspiciatis voluptatibus earum? Id, expedita nostrum.</p>
                 </div>
             </div>
             <div className="flex w-full">
-                <div className="p-6 w-[30%]">
+                <div className="p-6 w-[30%] text-white">
                     <h1 className="text-4xl p-2">
                         The Hensel Phelps Way
                     </h1>
@@ -30,7 +30,7 @@ export default function ImageSection() {
                 <div className="w-[70%]">
                     <img src="https://www.henselphelps.com/wp-content/uploads/2025/05/HP-Tyndall-Onsite-Day-1-48-scaled.jpg" alt="" className="w-full h-[60vh] object-cover" />
                 </div>
-                <div className="p-6 w-[30%] items-center justify-center">
+                <div className="p-6 w-[30%] items-center justify-center text-white">
                     <h1 className="text-4xl p-2">
                         Our People
                     </h1>
